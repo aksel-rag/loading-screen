@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+*{
+  cursor: url('https://imgur.com/040S22X.png'), auto;
+}
+body {
+  background-color: black;
+	margin: 0;
+	padding: 0;
+	font-family: 'Anonymous Pro';
+  overflow: hidden;
+  transition: 1s ease all;
+}
+
+video
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 110%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+	transition: 1s opacity;
+      object-fit: fill;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+#center1 {               
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);    
+    height: 800px;
+    width: 1700px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgba(54, 54, 54, 0.6);
+    z-index:99;
+}
+
+#copyright{
+  font-family: 'Anonymous Pro';
+	font-size: 12px;
+  font-weight: 90;
+	color: white;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  margin-right: -50px;
+  transform: translate(0%, -50%) rotate(-90deg);
+}
+
+.item-1{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);    
+	text-align: center;
+	font-size: 52px;
+	color: white;
+}
+
+.wigglePath {
+  stroke: #fff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.25;
+}
+
+.MuteBtn {
+  position: absolute;
+  left: 50%;
+  top: 1.5%;
+  transform: translate(-50%, -1.5%);    
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 14px;
+  height: 18px;
+  text-decoration: none;
+  color: #fff;
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  overflow: hidden;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.MuteBtn-bars {
+  display: block;
+}
+.MuteBtn-bar {
+  fill: currentcolor;
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+
+#pressTo{
+  position: absolute;
+  left: 50%;
+  top: 3%;
+  transform: translate(-50%, -3%);   
+}
+.sidebar-toggle {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.sidebar-toggle span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+#shut line {
+  stroke-opacity: 0.7;
+}
+
+.sidebar-toggle span:nth-child(1) {
+  top: 6px;
+}
+
+.sidebar-toggle span:nth-child(2) {
+  top: 18px;
+}
+
+.sidebar-toggle span:nth-child(3) {
+  top: 30px;
+}
+
+.sidebar-toggle.open span:nth-child(1) {
+  transform: rotate(-45deg);
+  width: 100%;
+  background-color: transparent;
+  animation: color-change 0.5s ease-in-out 0.5s forwards;
+  top: 15px; /* adjust the top value */
+  left: 0; /* adjust the left value */
+}
+
+.sidebar-toggle.open span:nth-child(2) {
+  transform: rotate(45deg);
+  width: 100%;
+  background-color: transparent;
+  animation: color-change 0.5s ease-in-out 0.5s forwards;
+  top: 15px; /* adjust the top value */
+  left: 0; /* adjust the left value */
+}
+
+.sidebar-toggle.open span:nth-child(3) {
+  opacity: 0;
+  top: 15px;
+  width: 100%;
+  left: 0;
+  transform: rotate(45deg);
+}
+
+@keyframes color-change {
+  to {
+    background-color: black;
+  }
+}
+
+.sidebar-menu{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+  opacity: 0;
+}
+
+.sidebar-menu.open {
+  opacity: 1;
+}
+
+
+.sidebar-content{
+  font-weight: 10;
+  font-family: "Anonymous Pro";
+  text-align: left;
+  position: absolute;
+  left: 10%;
+  top: 45%;
+  transform: translate(-10%, -45%);
+  transform: rotate(-32deg);
+  color: black;
+  z-index: 99;
+  list-style: none;
+  cursor: pointer;
+  font-size: 2rem;
+  animation: fade-in 0.5s ease-in-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+.sidebar-content a{
+  transition: 0.5s ease all;
+}
+.sidebar-content a:hover{
+  cursor: pointer;
+  color: white;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

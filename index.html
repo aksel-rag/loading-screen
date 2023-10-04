@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!--Title and Links-->
+	<title>Loading Screen</title>
+  <link rel="stylesheet" href="loading.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!--End of Title and Links-->
+</head>
+
+<body>
+    <h2 id="copyright">COPYRIGHT - UNIDRIFT</h2> <!--Copy right title floating to the right-->
+    
+    <!--Background video and music-->
+    <video autoplay muted loop id="bgVideo">
+    <source src="https://images.all-free-download.com/footage_preview/mp4/modern_train_moving_on_metro_station_6892330.mp4" type="video/mp4">
+    </video>
+
+    <iframe src="https://cdn.shopify.com/s/files/1/0699/3454/7266/files/silence.mp3?v=1678471589" allow="autoplay" id="audio" style="display:none"></iframe>
+
+    <audio id="myaudio" playsinline autoplay loop>
+      <source src="https://cdn.shopify.com/s/files/1/0699/3454/7266/files/unidrift.mp3?v=1678471593" type="audio/mp3">
+		</audio>
+		<!--Background video and music-->
+
+    <!--Audio Script plays at a certain volume-->
+		<script>
+      var audio = document.querySelector("#myaudio");
+      audio.volume = 0.2;
+    </script>
+
+  <!--End of script-->
+
+
+  <!--Main Events-->
+    <div id="center1">
+        <div class="item-1">
+          <p style="font-size: 14px;margin-bottom:-50px;">Drifting Server</p>
+          <h1 style="letter-spacing: 3px;font-family: 'Roboto'">UNIDRIFT</h1>
+          <p style="font-size: 14px;margin-top:-50px;">Loading...</p>
+        </div> 
+
+        <!--Music/Mute button-->
+        <button id="btn" class="MuteBtn">
+          <svg class="MuteBtn-bars" viewBox="0 0 14 18">
+            <rect class="MuteBtn-bar" x="0" y="0" width="2" height="18" />
+            <rect class="MuteBtn-bar" x="4" y="0" width="2" height="18" /> 
+            <rect class="MuteBtn-bar" x="8" y="0" width="2" height="18" /> 
+            <rect class="MuteBtn-bar" x="12" y="0" width="2" height="18" />
+          </svg>
+        </button>
+        <p style="color: white; font-size: 12px;" id="pressTo">Press SPACE to mute</p>
+        <!--End Music/Mute button-->
+
+        <button class="sidebar-toggle" id="sidebar-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <div class="sidebar-menu">
+          <div class="sidebar-content">
+            <!-- add your menu content here -->
+            <ul>
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar-menu">
+        </div>
+
+    </div>
+<!--End of Main Events-->
+
+<!--Scripts-->
+<script src="main.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/63340/CustomWiggle.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/63340/CustomEase.js'></script><script src="loader.js"></script>
+<!--End of Scripts-->
+
+</body>
+</html>
