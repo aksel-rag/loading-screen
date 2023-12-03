@@ -2,10 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Bungee');
+@import url('https://fonts.googleapis.com/css?family=Kanit');
 
-*{
-  cursor: url('https://imgur.com/040S22X.png'), auto;
-}
 body {
   background-color: black;
 	margin: 0;
@@ -35,14 +33,24 @@ video
     -ms-filter: blur(10px);
     filter: blur(10px);
 }
+#nameOfSong{
+  color: white;
+  font-size: 1vh;
+  position: absolute;
+  left: 50%;
+  top: 7%;
+  transform: translate(-50%, -7%);
+}
 
 #center1 {               
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);    
-    height: 80vh;
-    width: 170vh;
+    height: 80%;
+    width: 80vw; 
+    max-height: 80vh; 
+    max-width: 170vh; 
     border-style: solid;
     border-width: 4px;
     border-color: rgba(54, 54, 54, 0.6);
@@ -61,15 +69,15 @@ video
   transform: translate(0%, -50%) rotate(-90deg);
 }
 
-.item-1{
+#item-1{
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);    
 	text-align: center;
-	font-size: 5.2vh;
 	color: white;
 }
+
 
 .wigglePath {
   stroke: #fff;
@@ -120,133 +128,165 @@ video
   top: 3%;
   transform: translate(-50%, -3%);   
 }
-.sidebar-toggle {
-  position: fixed;
-  top: 5vh;
-  left: 5vh;
-  width: 4vh;
-  height: 4vh;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  z-index: 99;
-}
-
-.sidebar-toggle span {
-  display: block;
+.menu-icon {
+  top: 6vh;
+  left: 3%;
+  transform: translateX(-3%);
+  width: 35px;
+  height: 2px;
+  background-color: #ffffff;
   position: absolute;
-  height: 3px;
-  width: 100%;
-  background: rgb(255, 255, 255);
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-}
-#shut line {
-  stroke-opacity: 0.7;
+  cursor: pointer;
+  z-index: 9999;
 }
 
-.sidebar-toggle span:nth-child(1) {
-  top: .6vh;
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  width: 35px;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  transition: transform 0.3s ease;
 }
 
-.sidebar-toggle span:nth-child(2) {
-  top: 1.8vh;
+.menu-icon::before {
+  top: -10px;
 }
 
-.sidebar-toggle span:nth-child(3) {
-  top: 3vh;
+.menu-icon::after {
+  top: 10px;
 }
 
-.sidebar-toggle.open span:nth-child(1) {
+.menu-icon.open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.menu-icon.open::after {
   transform: rotate(-45deg);
-  width: 100%;
-  background-color: transparent;
-  animation: color-change 0.5s ease-in-out 0.5s forwards;
-  top: 15px;
-  left: 0;
+  top: 0;
 }
 
-.sidebar-toggle.open span:nth-child(2) {
-  transform: rotate(45deg);
-  width: 100%;
-  background-color: transparent;
-  animation: color-change 0.5s ease-in-out 0.5s forwards;
-  top: 15px;
-  left: 0;
-}
-
-.sidebar-toggle.open span:nth-child(3) {
+#menu {
   opacity: 0;
-  top: 15px;
-  width: 100%;
-  left: 0;
-  transform: rotate(45deg);
+  color: white;
+  text-align: center;
+  font-size: 3vh;
+  font-family: "Kanit";
+  background-color: rgba(0, 0, 0, 0.788);
+  height: 100%;
+  width: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  transition: width 0.5s ease, opacity .5s ease; 
 }
 
-@keyframes color-change {
-  to {
-    background-color: rgb(255, 255, 255);
-  }
+#menu a {
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: .3s ease-in-out all;
 }
 
-.sidebar-menu{
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-  opacity: 0;
+#menu a:hover {
+  color: rgb(32, 32, 32);
 }
 
-.sidebar-menu.open {
+#menu.open {
+  width: 250px; 
   opacity: 1;
 }
 
-
-.sidebar-content{
-  font-weight: 10;
-  font-family: "Anonymous Pro";
-  text-align: center;
+#close{
   position: absolute;
-  left: 10%;
-  top: 45%;
-  transform: translate(-10%, -45%);
-  transform: rotate(-32deg);
-  color: rgb(255, 255, 255);
-  z-index: 99;
-  list-style: none;
-  cursor: pointer;
-  font-size: 2rem;
-  animation: fade-in 0.5s ease-in-out 0.5s forwards;
-  opacity: 0;
+  left: 90%;
+  top: 4%;
+  transform: translate(-90%, -4%);
+}
+
+.fade {
+  animation: fade-in 1s;
 }
 
 @keyframes fade-in {
-  to {
-    opacity: 1;
-  }
-}
-.sidebar-content a{
-  transition: 0.5s ease all;
-}
-.sidebar-content a:hover{
-  cursor: pointer;
-  color: rgb(121, 120, 120);
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
+}
+
+.darker{
+  background-color: rgba(10, 10, 10, 0.7) !important;
+}
+
+#set1 p{
+  padding: 15px;
+  width: 60vh;
+  margin-top: -16px;
+  background-color: rgba(7, 7, 7, 0.7);
+}
+
+#set2 p{
+  padding: 15px;
+  width: 35vh;
+  margin-top: -16px;
+  background-color: rgba(7, 7, 7, 0.7);
+}
+
+#set3 p{
+  padding: 15px;
+  width: 35vh;
+  margin-top: -16px;
+  background-color: rgba(7, 7, 7, 0.7);
+}
+
+#set3,
+#set2 {
+  display: inline-block;
+  vertical-align: top; /* Align the top edges of the divs */
+}
+
+#person1,
+#person2 {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 50px; /* Adjust the gap between the divs as needed */
+}
+
+/* Only apply margin-right to #person1, not the last item */
+#person1:last-child {
+  margin-right: 0;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50px;
+}
+
+#socials a {
+  color: #121212;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  margin: 5px;
+  text-decoration: none;
+  padding: 15px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-size: 3vh;
+}
+
+#socials a:hover{
+  background-color: #121212;
+  color: white;
 }

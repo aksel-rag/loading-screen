@@ -2,6 +2,12 @@
 <html>
 <head>
 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="">
+
+  <script src="https://kit.fontawesome.com/f2057f9f44.js" crossorigin="anonymous"></script>
   <!--Title and Links-->
 	<title>Loading Screen</title>
   <link rel="stylesheet" href="loading.css" />
@@ -10,11 +16,12 @@
 </head>
 
 <body>
-    <h2 id="copyright">COPYRIGHT - UNIDRIFT</h2> <!--Copy right title floating to the right-->
+    <p id="nameOfSong">Name of Song - Artist</p> <!--Copy right title floating to the right-->
+    <h2 id="copyright">COPYRIGHT - SERVER NAME</h2> <!--Copy right title floating to the right-->
     
     <!--Background video and music-->
     <video autoplay muted loop id="bgVideo">
-    <source src="https://images.all-free-download.com/footage_preview/mp4/modern_train_moving_on_metro_station_6892330.mp4" type="video/mp4">
+    <source src="videoplayback.mp4" type="video/mp4">
     </video>
 
     <iframe src="https://cdn.shopify.com/s/files/1/0699/3454/7266/files/silence.mp3?v=1678471589" allow="autoplay" id="audio" style="display:none"></iframe>
@@ -31,13 +38,11 @@
     </script>
 
   <!--End of script-->
-
-
   <!--Main Events-->
     <div id="center1">
-        <div class="item-1">
+        <div id="item-1">
           <p style="font-size: 14px;margin-bottom:-50px;">Fivem Server</p>
-          <h1 style="letter-spacing: 3px;font-family: 'Roboto'">SERVER NAME</h1>
+          <h1 style="letter-spacing: 3px;font-family: 'Roboto';font-size: 5.2vw;">SERVER NAME</h1>
           <p style="font-size: 14px;margin-top:-50px;">Loading...</p>
         </div> 
 
@@ -53,24 +58,13 @@
         <p style="color: white; font-size: 12px;" id="pressTo">Press SPACE to mute</p>
         <!--End Music/Mute button-->
 
-        <button class="sidebar-toggle" id="sidebar-btn">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-
-        <div class="sidebar-menu">
-          <div class="sidebar-content">
-            <!-- add your menu content here -->
-            <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="sidebar-menu">
+        <div class="menu-icon"></div>
+        <div id="menu">
+          <a id="close">X</a>
+          <a id="rules">RULES</a>
+          <a id="socials">SOCIALS</a>
+          <a id="keybinds">KEYBINDS</a>
+          <a id="staff">STAFF</a>
         </div>
 
     </div>
